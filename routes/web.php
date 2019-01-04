@@ -11,6 +11,13 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/sin-permisos', function(){
+    echo "no tienes permisos para ver este contenido";
+})->name('sin-permisos');
+Route::get('/admin', function(){
+    echo "Bienvenido ";
+})->middleware('verifyName:gil');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
