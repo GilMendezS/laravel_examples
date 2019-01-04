@@ -14,6 +14,7 @@ class HelloController extends Controller
     public function index()
     {
         $data['showName'] = FALSE;
+        $data['age'] = 10;
         $data['name'] = 'Gilberto';
         return view('hello', $data);
     }

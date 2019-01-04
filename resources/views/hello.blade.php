@@ -1,15 +1,12 @@
 @extends('layouts.master')
 
 @section('content')
-    @if($showName)
-        @component('components.message')
-            @slot('title')
-                Title here
-            @endslot
-            <p>Welcome again</p>
-        @endcomponent
+    @if ($age == 1)
+        <p>Age : 1</p>
+    @elseif($age == 0)    
+        <p>Age : 0</p>
     @else
-        <p>Dont show the name</p>
+        <p>Age != 0 & 1</p>
     @endif
     
 @endsection
