@@ -11,16 +11,9 @@
 |
 */
 
-Route::get('/sin-permisos', function(){
-    echo "no tienes permisos para ver este contenido " .\Auth::user()->name;
-})->name('sin-permisos');
-Route::get('/admin', function(){
-    echo "Bienvenido ";
-})->middleware('verifyName:Gilberto,Fulanito');
-
+Route::get('/message', 'MyFirstController@message');
 
 
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
