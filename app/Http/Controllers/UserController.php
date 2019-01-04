@@ -34,14 +34,13 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        if($request->hasFile('image')){
-            //$path = $request->image->store('images');
-            $path = $request->image->storeAs('images', 'customName.jpg');
-            dd("image saves as $path");
-        }
-        else {
-            dd("image not given");
-        }
+        $validatedData = $request->validate([
+            'name' => 'required|max:255',
+            'email' => 'required|unique:users|max:255',
+            'password' => 'required|min:6|max:255'
+        ]);
+        dd("validion passed");
+        
     }
 
     /**
