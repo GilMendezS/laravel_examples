@@ -6,6 +6,10 @@ use Illuminate\Http\Request;
 
 class MyFirstController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function message(){
         return "mi first message from a controller";
     }
