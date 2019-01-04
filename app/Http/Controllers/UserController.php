@@ -34,19 +34,21 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //dd($request)
-        $input = $request->all();//get all data
-        $name = $request->query('name');//get query param with name
-        //check if request has input name
-        if ($request->has('name')) {
-            //
+        $file = $request->file('myfile'); // get data from file
+        //or 
+        $file = $request->myfile;
+        
+        //check if request has file
+        if($request->hasFile('myfile')){
+            echo "has file \n";
+            if($request->file('myfile')->isValid()){
+                echo "is valid";
+            }
         }
-
-        //If you would like to determine if a value is present on the request and is not empty, you may use the filled method:
-
-        if ($request->filled('name')) {
-            //
-        }
+        $path = $request->myfile->path();
+        echo "PATH: $path \n";
+        $extension = $request->myfile->extension();
+        echo "EXTENSION: $extension \n";
     }
 
     /**

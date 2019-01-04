@@ -8,17 +8,9 @@
 </head>
 <body>
     <h1>Add user</h1>
-    <form action="{{route('user.addUser')}}" method="POST">
+    <form action="{{route('user.addUser')}}" method="POST" enctype="multipart/form-data">
         @csrf
-        <label for="">Name</label>
-        <input type="text" name="name">
-        <br>
-        <label for="">Email</label>
-        <input type="email" name="email">
-        <br>
-        <label for="">Password</label>
-        <input type="password" name="password">
-        <br>
+        <input type="file" name="myfile">
         <button type="submit">Send</button>
     </form>
 </body>
