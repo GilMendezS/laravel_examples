@@ -34,21 +34,14 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        $file = $request->file('myfile'); // get data from file
-        //or 
-        $file = $request->myfile;
-        
-        //check if request has file
-        if($request->hasFile('myfile')){
-            echo "has file \n";
-            if($request->file('myfile')->isValid()){
-                echo "is valid";
-            }
+        if($request->hasFile('image')){
+            //$path = $request->image->store('images');
+            $path = $request->image->storeAs('images', 'customName.jpg');
+            dd("image saves as $path");
         }
-        $path = $request->myfile->path();
-        echo "PATH: $path \n";
-        $extension = $request->myfile->extension();
-        echo "EXTENSION: $extension \n";
+        else {
+            dd("image not given");
+        }
     }
 
     /**

@@ -10,7 +10,7 @@
     <h1>Add user</h1>
     <form action="{{route('user.addUser')}}" method="POST" enctype="multipart/form-data">
         @csrf
-        <input type="file" name="myfile">
+        <input type="file" name="image">
         <button type="submit">Send</button>
     </form>
 </body>
