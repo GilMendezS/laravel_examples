@@ -1,16 +1,11 @@
 @extends('layouts.master')
 
 @section('content')
-    @switch($case)
-        @case(1)
-            First case...
-            @break
+    @auth
+        // The user is authenticated...
+    @endauth
 
-        @case(2)
-            Second case...
-            @break
-
-        @default
-            Default case...
-    @endswitch
+    @guest
+        // The user is not authenticated...
+    @endguest
 @endsection
