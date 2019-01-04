@@ -1,5 +1,10 @@
 @extends('layouts.master')
 
 @section('content')
-<h1>Hi welcome {{$name}}</h1>    
+    @component('components.message')
+        @slot('title')
+            Title here
+        @endslot
+        <p>Welcome again</p>
+    @endcomponent
 @endsection
