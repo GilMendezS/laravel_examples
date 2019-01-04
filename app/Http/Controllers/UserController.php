@@ -35,7 +35,18 @@ class UserController extends Controller
     public function store(Request $request)
     {
         //dd($request)
-        dd($request->input('email')." $request->name");
+        $input = $request->all();//get all data
+        $name = $request->query('name');//get query param with name
+        //check if request has input name
+        if ($request->has('name')) {
+            //
+        }
+
+        //If you would like to determine if a value is present on the request and is not empty, you may use the filled method:
+
+        if ($request->filled('name')) {
+            //
+        }
     }
 
     /**
