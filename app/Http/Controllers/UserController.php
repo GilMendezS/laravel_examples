@@ -23,7 +23,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        return "show form to create a user";
+        return view('users.create');
     }
 
     /**
@@ -34,7 +34,8 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //dd($request)
+        dd($request->input('email')." $request->name");
     }
 
     /**

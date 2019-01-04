@@ -11,12 +11,8 @@
 |
 */
 
-Route::get('/message', 'MyFirstController@message');
-
-
-Route::resource('hello', 'HelloController')->names([
-    'store' => 'hello.save',
-    'update' => 'hello.update'
+Route::resource('users', 'UserController')->names([
+    'store' => 'user.addUser'
 ]);
 
 Auth::routes();
