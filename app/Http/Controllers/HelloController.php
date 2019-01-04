@@ -13,6 +13,7 @@ class HelloController extends Controller
      */
     public function index()
     {
+        $data['showName'] = FALSE;
         $data['name'] = 'Gilberto';
         return view('hello', $data);
     }
