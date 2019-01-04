@@ -14,21 +14,7 @@
 Route::get('/message', 'MyFirstController@message');
 
 
-Route::get('/message/{name}', 'MyFirstController@customMessage');
-
-Route::get('/view', 'MyFirstController@view');
-
-Route::get('profile/{id}', 'MyFirstController@profile');
-
-Route::resource('users', 'UserController')->names([
-    'create' => 'user.createUser',
-    'index' => 'user.getAllUser',
-    'store' => 'user.addUser',
-    'show' => 'user.showUser',
-    'edit' => 'user.editUser',
-    'update' => 'user.updateUser',
-    'destroy' => 'user.removeUser'
-]);
+Route::resource('hello', 'HelloController');
 
 Auth::routes();
 
