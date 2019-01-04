@@ -12,4 +12,7 @@ class MyFirstController extends Controller
     public function customMessage($name){
         return "hi $name";
     }
+    public function view(){
+        return view('MyFirstView');
+    }
 }
