@@ -15,4 +15,7 @@ class MyFirstController extends Controller
     public function view(){
         return view('MyFirstView');
     }
+    public function profile($id){
+        return view('Profile', ['id' => $id]);
+    }
 }
