@@ -1,12 +1,16 @@
 @extends('layouts.master')
 
 @section('content')
-    @if ($age == 1)
-        <p>Age : 1</p>
-    @elseif($age == 0)    
-        <p>Age : 0</p>
-    @else
-        <p>Age != 0 & 1</p>
-    @endif
-    
+    @switch($case)
+        @case(1)
+            First case...
+            @break
+
+        @case(2)
+            Second case...
+            @break
+
+        @default
+            Default case...
+    @endswitch
 @endsection
