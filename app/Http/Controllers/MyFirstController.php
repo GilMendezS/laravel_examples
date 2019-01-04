@@ -9,4 +9,7 @@ class MyFirstController extends Controller
     public function message(){
         return "mi first message from a controller";
     }
+    public function customMessage($name){
+        return "hi $name";
+    }
 }

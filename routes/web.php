@@ -14,6 +14,7 @@
 Route::get('/message', 'MyFirstController@message');
 
 
+Route::get('/message/{name}', 'MyFirstController@customMessage');
 
 Auth::routes();
 
