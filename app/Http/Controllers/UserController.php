@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use Validator;
 use Illuminate\Http\Request;
 use App\Http\Requests\CreateUserRequest;
 
@@ -34,10 +35,21 @@ class UserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(CreateUserRequest $request)
+    public function store(Request $request)
     {
-        dd("validion passed");
         
+        $validator = Validator::make($request->all(), [
+            'name' => 'required|max:255',
+            'email' => 'required|unique:users|max:255',
+            'password' => 'required|min:6|max:255'
+        ]);
+
+        if ($validator->fails()) {
+            return redirect('users/create')
+                        ->withErrors($validator)
+                        ->withInput();
+        }
+        dd("validation passed");
     }
 
     /**
