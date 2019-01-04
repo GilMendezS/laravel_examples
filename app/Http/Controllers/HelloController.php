@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
 
 class HelloController extends Controller
@@ -13,9 +14,9 @@ class HelloController extends Controller
      */
     public function index()
     {
-        $data['showName'] = FALSE;
-        $data['case'] = 10;
-        $data['name'] = 'Gilberto';
+        $data['numbers'] = [10,12,19,200];
+        $data['x'] = 0;
+        $data['users'] = User::all();
         return view('hello', $data);
     }
 
