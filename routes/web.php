@@ -20,6 +20,8 @@ Route::get('/view', 'MyFirstController@view');
 
 Route::get('profile/{id}', 'MyFirstController@profile');
 
+Route::resource('users', 'UserController');
+
 Auth::routes();
 
 

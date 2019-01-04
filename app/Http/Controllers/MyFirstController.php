@@ -8,7 +8,8 @@ class MyFirstController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth');
+        //$this->middleware('auth')->except('profile');
+        $this->middleware('auth')->except(['message','customMessage','view']);
     }
     public function message(){
         return "mi first message from a controller";
