@@ -1,7 +1,10 @@
 @extends('layouts.master')
 
 @section('content')
-    <h1>Comments</h1>
-    {{ $x }}
-    {{-- $x --}}
+    @php
+        $x = 10;
+    @endphp
+    @for ($i = 0; $i < $x; $i++)
+        {{$i}}   
+    @endfor
 @endsection
