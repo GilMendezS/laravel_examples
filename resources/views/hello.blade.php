@@ -1,10 +1,12 @@
 @extends('layouts.master')
 
 @section('content')
-    @php
-        $x = 10;
-    @endphp
-    @for ($i = 0; $i < $x; $i++)
-        {{$i}}   
-    @endfor
+    <form method="POST" action="{{route('hello.save')}}">
+        @csrf
+        <input name="name" type="text" placeholder="name">
+        <br>
+        <input name="lastname" type="lastname" placeholder="lastname">
+        <br>
+        <button tye="submit">Send</button>
+    </form>
 @endsection

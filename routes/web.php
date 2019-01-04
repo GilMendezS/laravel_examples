@@ -14,7 +14,9 @@
 Route::get('/message', 'MyFirstController@message');
 
 
-Route::resource('hello', 'HelloController');
+Route::resource('hello', 'HelloController')->names([
+    'store' => 'hello.save'
+]);
 
 Auth::routes();
 
