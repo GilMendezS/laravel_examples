@@ -1,8 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\User;
 use Illuminate\Http\Request;
+use App\Http\Requests\CreateUserRequest;
 
 class UserController extends Controller
 {
@@ -32,13 +34,8 @@ class UserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreateUserRequest $request)
     {
-        $validatedData = $request->validate([
-            'name' => 'required|max:255',
-            'email' => 'required|unique:users|max:255',
-            'password' => 'required|min:6|max:255'
-        ]);
         dd("validion passed");
         
     }
