@@ -13,9 +13,9 @@ class CheckName
      * @param  \Closure  $next
      * @return mixed
      */
-    public function handle($request, Closure $next, $name)
+    public function handle($request, Closure $next, ...$names)
     {
-        if($request->user()->name != $name){
+        if(!in_array($request->user()->name, $names)){
             return redirect()->route('sin-permisos');
         }
         return $next($request);

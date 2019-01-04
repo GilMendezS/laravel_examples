@@ -12,11 +12,14 @@
 */
 
 Route::get('/sin-permisos', function(){
-    echo "no tienes permisos para ver este contenido";
+    echo "no tienes permisos para ver este contenido " .\Auth::user()->name;
 })->name('sin-permisos');
 Route::get('/admin', function(){
     echo "Bienvenido ";
-})->middleware('verifyName:gil');
+})->middleware('verifyName:Gilberto,Fulanito');
+
+
+
 
 Auth::routes();
 
