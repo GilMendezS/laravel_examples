@@ -20,7 +20,15 @@ Route::get('/view', 'MyFirstController@view');
 
 Route::get('profile/{id}', 'MyFirstController@profile');
 
-Route::resource('users', 'UserController');
+Route::resource('users', 'UserController')->names([
+    'create' => 'user.createUser',
+    'index' => 'user.getAllUser',
+    'store' => 'user.addUser',
+    'show' => 'user.showUser',
+    'edit' => 'user.editUser',
+    'update' => 'user.updateUser',
+    'destroy' => 'user.removeUser'
+]);
 
 Auth::routes();
 
